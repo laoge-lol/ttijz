@@ -1,0 +1,18 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+	<view class="bgcolor">
+		<image src="../../images/logo.png" ></image>
+	</view>
+	<input placeholder="请输入账号" type="number" bindinput="nameInput" ></input>
+	<input placeholder="请输入密码"  type="password"  bindinput="pwdInput" ></input>
+	<!-- <view class="code">
+		<input placeholder="{{pleaseInputCode}}" type="password" type="number" bindinput="pwdInput" class="inputCode"></input>
+		<view class="varificationCode" bindtap="login">{{code}}</view>
+	</view> -->
+	<image src="../../images/close.png" class="close" bindtap="closeTap"></image>
+	<view bindtap="loginTap" class="button">登录</view>
+	<view class="bottom">
+		<text class="register" bindtap="registerTap">注册</text>
+		<text class="forgetpwd" bindtap="forgetTap">忘记密码</text>
+	</view>
+</view>

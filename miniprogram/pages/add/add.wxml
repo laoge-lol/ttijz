@@ -1,0 +1,44 @@
+<view class="container">
+	<view class="title">
+		<view style="height:{{statusBarHeight}}px"></view>
+		<view class="titlebar" style="height:44px">
+			<text bindtap="goback">取消</text>
+		</view>
+	</view>
+	<picker class="picker" style="margin-top:{{statusBarHeight+44}}px" mode="date" value="{{date}}" start="2000-01" end="{{nowDate}}" bindchange="bindDateChange" fields="day">
+		<view class="date">
+			<view class="year">
+				<image src="../../images/prev.png" catchtap="prevTap"></image>
+				<!-- <image class="i" src="../../images/prev.png"></image> -->
+				<text>{{year}}年{{month}}月{{day}}日</text>
+				<!-- <image class="i" src="../../images/next.png"></image> -->
+				<image src="../../images/next.png" catchtap="nextTap"></image>
+			</view>
+		</view>
+	</picker>
+	<scroll-view scroll-y="{{true}}" class="scrollView" style="height:400rpx">
+		<view class="icon">
+			<block wx:for="{{icons}}" wx:key="index">
+				<view class="icon_item" bindtap="iconTap" data-index="{{index}}">
+					<image src="{{item}}"></image>
+					<text>{{names[index]}}</text>
+				</view>
+			</block>
+		</view>
+	</scroll-view>
+	<scroll-view scroll-y="{{true}}" class="input_scrollview" style="height:400rpx">
+		<block wx:for="{{inputs}}" wx:key="index">
+			<view class="input_item">
+				<text class="order">{{index+1}}.</text>
+				<image class="itype" src="{{types[index]?'../../images/in.png':'../../images/out.png'}}" bindtap="typeTap" data-index="{{index}}"></image>
+				<image class="delete" src="../../images/trash.png" bindtap="deleteTap" data-index="{{index}}"></image>
+				<image class="type" src="{{icons[item]}}"></image>
+				<text class="marktext">备注：</text>
+				<input class="mark" placeholder="点击输入备注..." bindinput="markInput" data-index="{{index}}"></input>
+				<view class="inputLine"></view>
+				<input class="amount" type="digit" placeholder="0.00" bindinput="amountInput" data-index="{{index}}"></input>
+			</view>
+		</block>
+	</scroll-view>
+	<view class="add" bindtap="addBill">添加</view>
+</view>

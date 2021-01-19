@@ -1,0 +1,20 @@
+<!--pages/newUser/newUser.wxml-->
+<view>
+	<view class="title">
+		<view style="height:{{statusBarHeight}}px"></view>
+		<view class="titlebar" style="height:44px">
+			<text bindtap="goback">返回</text>
+		</view>
+	</view>
+
+	<view class="container" style="margin-top:{{statusBarHeight+44}}px">
+		<text class="tip1">尊敬的用户您好，您是我们的第 {{account}} 位新用户</text>
+		<view class="ap">
+			<text class="a">账号：{{account}}</text>
+			<text class="p">密码：{{pwd}}</text>
+		</view>
+
+		<text class="tip2">请妥善保管您的账号密码，因为我们没有提供账号密码找回</text>
+	</view>
+
+</view>

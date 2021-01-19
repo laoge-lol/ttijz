@@ -1,0 +1,116 @@
+/* pages/mine/mine.wxss */
+.title {
+    /* z-index: 99; */
+    position: fixed;
+    width: 100%;
+    /* height: 100rpx; */
+    background-color: orange;
+}
+
+.titlebar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: flex-start; */
+    /* align-self: center; */
+}
+
+.titlebar text {
+    padding: 0 30rpx;
+    font-size: 15px;
+    height: 44px;
+    /* width: 50px; */
+    line-height: 44px;
+    text-align: center;
+}
+
+
+.input_scrollview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_scrollview image{
+    margin-top: 150rpx;
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.input_scrollview text{
+    font-size: 20px;
+    color: black;
+    /* font-weight: bold; */
+    margin-top: 30rpx;
+}
+
+.gender{
+    margin-top:70rpx;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.genderMale{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(100, 213, 241);
+    border-radius: 10rpx;
+    width: 150rpx;
+    color: rgb(100, 213, 241);
+    height: 200rpx;
+}
+.generFmale{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid pink;
+    border-radius: 10rpx;
+    width: 150rpx;
+    color:pink;
+    height: 200rpx;
+}
+
+.check{
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 20rpx;
+    border: 1px solid  rgb(100, 213, 241);
+    margin-bottom: 10rpx;
+}
+.checked{
+    background-color: rgb(100, 213, 241);
+}
+
+.checkf{
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 20rpx;
+    border: 1px solid  pink;
+    margin-bottom: 10rpx;
+}
+
+.checkedf{
+    background-color: pink;
+}
+
+
+.loginOut{
+    position: fixed;
+    left: 125rpx;
+    right: 125rpx;
+    bottom: 100rpx;
+    border-radius: 40rpx;
+    border: 1px solid rgb(241, 141, 141);
+    width: 500rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: rgb(236, 115, 115);
+    text-align: center;
+}

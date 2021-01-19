@@ -1,0 +1,182 @@
+/* pages/detail/detail.wxss */
+page{
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    /* z-index: 99; */
+    position: fixed;
+    width: 100%;
+    /* height: 100rpx; */
+    background-color: orange;
+}
+.titlebar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: flex-start; */
+    /* align-self: center; */
+}
+
+.titlebar text{
+    padding: 0 30rpx;
+    font-size: 15px;
+    height: 44px;
+    /* width: 50px; */
+    line-height: 44px;
+    text-align: center;
+}
+
+.detail{
+    width: 750rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20rpx;
+}
+.inner{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px gray;
+    border-radius: 10rpx;
+    /* align-content: center; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 200rpx;
+    height: 200rpx;
+}
+.inbg{
+    background-image: linear-gradient(to right,rgb(107, 172, 245),rgb(235, 234, 234));
+}
+.outbg{
+    background-image: linear-gradient(to right,rgb(235, 234, 234),rgb(255, 94, 0));
+}
+.totalbg{
+    background-image: linear-gradient(to right,white,rgb(204, 204, 43));
+}
+
+.detailTop{
+    display: flex;
+    flex-direction: row;
+    padding: 10rpx;
+    align-items: center;
+}
+.detailTop image{
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 10rpx;
+}
+
+.detailTop text{
+   font-size: 12px;
+   color: gray;
+}
+.detailAmount{
+    font-size: 20px;
+    text-align: center;
+    line-height: 100rpx;
+    flex: 1;
+} 
+
+.incolor{
+    color: black;
+}
+.outcolor{
+    color: red;
+}
+.totalcolor{
+    color: black;
+}
+.input_scrollview{
+    flex: 1;
+}
+
+.float{
+    font-size: 15px;
+}
+.order{
+    font-size: 12px;
+    color: rgb(187, 186, 186);
+    margin-left: 10rpx;
+}
+.input_item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 3%;
+    font-size: 14px;
+    height: 100rpx;
+    margin-top: 20rpx;
+    box-shadow: 0 0 5px gray;
+    background-color: pink;
+    width: 94%;
+}
+
+.malebg{
+    background-color: rgb(253, 232, 235);
+}
+.fmalebg{
+    background-color: rgb(228, 244, 250);
+}
+.itype{
+    width: 50rpx;
+    height: 50rpx;
+    margin-left: 10rpx;
+}
+.delete{
+    width: 40rpx;
+    height: 40rpx;
+    margin: 0rpx 10rpx;
+}
+.type{
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 20rpx;
+}
+.marktext{
+    width: 90rpx;
+    color: gray;
+}
+.mark{
+    flex: 1;
+}
+.inputLine{
+    width: 1rpx;
+    height: 30rpx;
+    background-color: gray;
+    margin:0 20rpx ;
+}
+.amount{
+    font-size: 15px;
+    color: black;
+    width: 150rpx;
+}
+
+.box{
+    height: 170rpx;
+}
+
+.add{
+    height: 90rpx;
+    color: white;
+    background-color: orange;
+    border-radius: 100rpx;
+    position: fixed;
+    bottom: 50rpx;
+    letter-spacing: 10px;
+    width: 500rpx;
+    /* right: 50rpx; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow:-5rpx 5rpx 15rpx rgb(170, 169, 169);
+    z-index: 99;
+}

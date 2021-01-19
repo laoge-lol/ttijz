@@ -1,0 +1,25 @@
+<!--pages/mine/mine.wxml-->
+<view>
+	<view class="title">
+		<view style="height:{{statusBarHeight}}px"></view>
+		<view class="titlebar" style="height:44px">
+			<text bindtap="goback">返回</text>
+		</view>
+	</view>
+	<view scroll-y="{{true}}" class="input_scrollview" style="margin-top:{{statusBarHeight+44}}px">
+		<image src="../../images/self.png"></image>
+		<text>{{account}}</text>
+		<view class="gender">
+			<view class="genderMale" bindtap="checkedMale">
+				<view class="check {{gender==1?'checked':''}} "></view>男
+			</view>
+			<view class="generFmale" bindtap="checkedFmale">
+				<view class="checkf {{gender==2?'checkedf':''}} "></view>女
+			</view>
+		</view>
+	</view>
+
+	<view class="loginOut" bindtap="loginOut">
+		退出登录
+	</view>
+</view>

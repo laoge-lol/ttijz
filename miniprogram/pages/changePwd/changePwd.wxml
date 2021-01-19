@@ -1,0 +1,31 @@
+<!--pages/changePwd/changePwd.wxml-->
+<view>
+	<view class="title">
+		<view style="height:{{statusBarHeight}}px"></view>
+		<view class="titlebar" style="height:44px">
+			<text bindtap="goback">返回</text>
+		</view>
+	</view>
+	<view class="container" style="margin-top:{{statusBarHeight+44}}px">
+        <text class="tip">新用户修改密码</text>
+		<view class="item">
+			<text class="text">账号:</text>
+			<input bindinput="accountInput" value="{{account}}"></input>
+		</view>
+		<view class="item">
+			<text  class="text">旧密码:</text>
+			<input bindinput="pwdInput" type="password" value="{{pwd}}"></input>
+		</view>
+		<view class="item">
+			<text  class="text">新密码:</text>
+			<input bindinput="newpwdInput" type="password" value="{{newpwd}}"></input>
+		</view>
+		<view class="item">
+			<text  class="text">确认密码:</text>
+			<input bindinput="comfirmpwdInput" type="password" value="{{comfirmpwd}}"></input>
+		</view>
+
+         <view class="add" bindtap="submit">确认</view>
+	</view>
+   
+</view>

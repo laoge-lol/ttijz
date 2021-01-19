@@ -1,0 +1,74 @@
+<view class="container">
+	<view class="header">
+	<view class="title">
+		<view style="height:{{statusBarHeight}}px"></view>
+		<view class="titlebar" style="height:44px" bindtap="mineTap">
+			<image src="../../images/self.png"></image>
+			<text>记账</text>
+		</view>
+	</view>
+	<view class="timeInputOutput" bindtap="dateTap">
+		<view class="time">
+			<text class="year">{{year}}年</text>
+			<view>
+				<text class="month">{{month}}</text>
+				<text class="month_unit">月</text>
+			</view>
+			<image class="down" src="../../images/down.png"></image>
+		</view>
+		<view class="inputOutput">
+			<view class="input">
+				<text>收入</text>
+				<view class="amount">
+					<text class="int">{{inner}}</text>
+					<text class="float"  wx:if="{{inner==0}}">.00</text>
+				</view>
+			</view>
+			<view class="inputOuputLine"></view>
+			<view class="output">
+				<text>支出</text>
+				<view class="amount">
+					<text class="int">{{outer}}</text>
+					<text class="float"  wx:if="{{outer==0}}">.00</text>
+				</view>
+			</view>
+			<view class="inputOuputLine"></view>
+			<view class="output">
+				<text>总</text>
+				<view class="amount">
+					<text class="int">{{total}}</text>
+					<text class="float" wx:if="{{total==0}}">.00</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	</view>
+	
+	<view class="datasView">
+	<!-- <scroll-view scroll-y="{{true}}" class="scrollview" style="height:186px"> -->
+		<block wx:for="{{datas}}" wx:key="index" >
+			<view class="item" data-index="{{index}}" bindtap="itemTap">
+				<view class="itemtitle">
+					<text class="item_time">{{index}}</text>
+					<!-- <text class="itemcount">{{item.count}}</text> -->
+				</view>
+				<view class="itemLine"></view>
+				<block wx:for="{{item.data}}" wx:key="index2" wx:for-item="item2">
+					<view class="oneLine {{item2.gender==1?'fmalebg':item2.gender==2?'malebg':''}}">
+						<image src="{{item2.icon}}"></image>
+						<text class="mark">{{item2.userMark.length>0?item2.userMark:item2.mark}}</text>
+						<text class="itemamount {{item2.type?'in':'out'}}">{{item2.type?'+ '+item2.amount:'- '+item2.amount}}</text>
+					</view>
+				</block>
+				<view class="itemLine"></view>
+			</view>
+			
+		</block>
+	</view>
+	<!-- </scroll-view> -->
+	<label class="add" bindtap="add" for="btn">
+		<image src="../../images/add.png"></image>
+	</label>
+	<!-- 获取手机号需要非个人小程序才可以获取，个人小程序没有权限获取手机号码 -->
+	<!-- <button id="btn" hidden="true" style="z-index:99" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button> -->
+</view>

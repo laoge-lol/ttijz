@@ -1,0 +1,57 @@
+<!--pages/detail/detail.wxml-->
+<view class="container">
+	<view class="title">
+		<view style="height:{{statusBarHeight}}px"></view>
+		<view class="titlebar" style="height:44px">
+			<text bindtap="goback">返回</text>
+		</view>
+	</view>
+	<view scroll-y="{{true}}" class="input_scrollview" style="margin-top:{{statusBarHeight+44}}px">
+		<view class="detail">
+			<view class="inner inbg">
+				<view class="detailTop">
+					<image src="../../images/in.png"></image>
+					<text>收入：</text>
+				</view>
+				<view  class = "detailAmount incolor">
+                    <text>{{inAmount}}</text>
+                    <text class="float" wx:if='{{inAmount==0}}'>.00</text>
+                </view>
+			</view>
+			<view class="inner outbg">
+				<view class="detailTop">
+					<image src="../../images/out.png"></image>
+					<text>支出：</text>
+				</view>
+                <view  class = "detailAmount incolor">
+                    <text>{{outAmount}}</text>
+                    <text class="float" wx:if='{{outAmount==0}}'>.00</text>
+                </view>
+			</view>
+			<view class="inner totalbg">
+				<view class="detailTop">
+					<image src="../../images/total.png"></image>
+					<text>总：</text>
+				</view>
+                <view  class = "detailAmount incolor">
+                    <text>{{totalAmount}}</text>
+                    <text class="float" wx:if='{{totalAmount==0}}'>.00</text>
+                </view>
+			</view>
+		</view>
+		<block wx:for="{{datas}}" wx:key="index">
+			<view class="input_item {{item.gender==1?'fmalebg':item.gender==2?'malebg':''}}">
+				<text class="order">{{index+1}}.</text>
+				<image class="itype" src="{{item.type?'../../images/in.png':'../../images/out.png'}}" bindtap="typeTap" data-index="{{index}}"></image>
+				<image class="delete" src="{{item.delete?'../../images/trash_red.png':'../../images/trash.png'}}" bindtap="deleteTap" data-index="{{index}}"></image>
+				<image class="type" src="{{item.icon}}"></image>
+				<text class="marktext">备注：</text>
+				<input class="mark" placeholder="点击输入备注..." bindinput="markInput" value="{{item.userMark}}" data-index="{{index}}"></input>
+				<view class="inputLine"></view>
+				<input class="amount" type="digit" placeholder="0.00" bindinput="amountInput" value="{{item.amount}}" data-index="{{index}}"></input>
+			</view>
+		</block>
+		<view class="box"></view>
+	</view>
+	<view class="add" bindtap="submit">提交</view>
+</view>
