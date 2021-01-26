@@ -19,16 +19,21 @@ exports.main = async (event, context) => {
     const db = cloud.database();
     console.log(wxContext);
     try {
+        console.log(event);
         let data = event.data;
-        let gender = event.gender?event.gender:0;
+        let gender = event.gender == 1 ? event.gender : 0;
+        console.log(gender);
         let marks = '';
         for (let i = 0; i < data.length; i++) {
             marks += data[i].userMark;
         }
         console.log(marks);
-        var a = await cloud.openapi.security.msgSecCheck({
-            content: marks
-        })
+         // 没有备注时不需要调用腾讯安全检查
+        if (marks.length > 0) {
+            var a = await cloud.openapi.security.msgSecCheck({
+                content: marks
+            })
+        }
         for (let i = 0; i < data.length; i++) {
             let {
                 phone,
@@ -41,7 +46,7 @@ exports.main = async (event, context) => {
             } = data[i];
             let result = await db.collection("BK_bill").add({
                 data: {
-                    openid:wxContext.OPENID,
+                    openid: wxContext.OPENID,
                     gender,
                     phone,
                     createTime,

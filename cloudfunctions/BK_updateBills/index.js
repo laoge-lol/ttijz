@@ -19,9 +19,12 @@ exports.main = async (event, context) => {
         marks += datas[i].userMark;
     }
     console.log(marks);
+    // 没有备注时不需要调用腾讯安全检查
+    if(marks.length>0){
     var a = await cloud.openapi.security.msgSecCheck({
         content: marks
     })
+}
     console.log(a);
     let result = await db.collection("BK_bill").where({
         _id:_.in(deletes)
