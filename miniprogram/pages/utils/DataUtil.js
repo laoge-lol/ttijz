@@ -1,11 +1,17 @@
 function setDataIcon(item){
     // 数据封装工具类方法，根据mark的字符，添加对应的图标（icon）
-    if (item.mark == "小孩") {
+    if (item.mark == "娃娃"|| item.mark == "小孩") {
         item['icon'] = "../../images/baby.png"
     } else if (item.mark == "早餐") {
         item['icon'] = "../../images/breakfast.png"
+    }else if (item.mark == "医院") {
+        item['icon'] = "../../images/hospital.png"
     } else if (item.mark == "公交"|| item.mark == "交通") {
         item['icon'] = "../../images/bus.png"
+    } else if (item.mark == "买菜") {
+        item['icon'] = "../../images/food.png"
+    } else if (item.mark == "夜宵") {
+        item['icon'] = "../../images/barbecue.png"
     } else if (item.mark == "衣服") {
         item['icon'] = "../../images/clothes.png"
     } else if (item.mark == "通讯") {

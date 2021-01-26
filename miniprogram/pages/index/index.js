@@ -234,12 +234,13 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        if (wx.getStorageSync('isNeedChangePwd')) {
-            wx.navigateTo({
-                url: '../changePwd/changePwd?account=' + wx.getStorageSync('account') + "&pwd=bk001",
-            })
-            return;
-        }
+        // 需要修改密码才能登陆
+        // if (wx.getStorageSync('isNeedChangePwd')) {
+        //     wx.navigateTo({
+        //         url: '../changePwd/changePwd?account=' + wx.getStorageSync('account') + "&pwd=bk001",
+        //     })
+        //     return;
+        // }
         if (this.data.IndexNeedRefresh) {
             wx.startPullDownRefresh({
                 complete: (res) => {},

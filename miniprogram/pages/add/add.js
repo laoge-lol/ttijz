@@ -8,8 +8,8 @@ Page({
      */
     data: {
         statusBarHeight: app.globalData.statusBarHeight,
-        icons: ['../../images/baby.png', '../../images/breakfast.png', '../../images/lunch.png', '../../images/dinner.png', '../../images/bus.png', '../../images/fruits.png', '../../images/clothes.png', '../../images/communication.png', '../../images/dayuse.png', '../../images/lottery.png', '../../images/other1.png', '../../images/pets.png', '../../images/rent.png', '../../images/snacks.png', '../../images/study.png', '../../images/travel.png', '../../images/wages.png', '../../images/express.png', '../../images/other2.png', '../../images/other3.png', ],
-        names: ['小孩', '早餐', '午餐', '晚餐', '交通', '水果', '衣服', '通讯', '日用', '彩票', '其他', '宠物', '房租', '零食', '学习', '旅游', '工资', '快递', '其他@', '其他&', ],
+        icons: ['../../images/hospital.png','../../images/food.png','../../images/barbecue.png','../../images/baby.png', '../../images/breakfast.png', '../../images/lunch.png', '../../images/dinner.png', '../../images/bus.png', '../../images/fruits.png', '../../images/clothes.png', '../../images/communication.png', '../../images/dayuse.png', '../../images/lottery.png', '../../images/other1.png', '../../images/pets.png', '../../images/rent.png', '../../images/snacks.png', '../../images/study.png', '../../images/travel.png', '../../images/wages.png', '../../images/express.png', '../../images/other2.png', '../../images/other3.png', ],
+        names: ['医院','买菜','夜宵','娃娃', '早餐', '午餐', '晚餐', '交通', '水果', '衣服', '通讯', '日用', '彩票', '其他', '宠物', '房租', '零食', '学习', '旅游', '工资', '快递', '其他@', '其他&', ],
         inputs: [],
         inputMarks: [],
         inputAmounts: [],
@@ -25,8 +25,11 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        console.log(wx.getStorageSync('icons').length);
+        console.log(this.data.icons.length);
         // 本地有缓存，且本地缓存的数据长度和变量的长度相同（因为变量长度会因为后面版本更新，增加账单类型而变长），才以本地缓存的数据展示到页面
-        if (wx.getStorageSync('icons').length > 0 && wx.getStorageSync('icons').length == this.data.icons) {
+        if (wx.getStorageSync('icons').length > 0 && wx.getStorageSync('icons').length == this.data.icons.length) {
+            console.log("使用缓存的类型数组"); 
             var icons = wx.getStorageSync('icons');
             var names = wx.getStorageSync('names');
             this.setData({
