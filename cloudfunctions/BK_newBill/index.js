@@ -21,7 +21,7 @@ exports.main = async (event, context) => {
     try {
         console.log(event);
         let data = event.data;
-        let gender = event.gender == 1 ? event.gender : 0;
+        let gender = (event.gender == 1|| event.gender == 2) ? event.gender : 0;
         console.log(gender);
         let marks = '';
         for (let i = 0; i < data.length; i++) {
