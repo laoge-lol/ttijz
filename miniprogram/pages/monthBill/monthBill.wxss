@@ -151,7 +151,7 @@
 }
 
 .oneLine{
-    margin: 0 25rpx;
+    padding: 0rpx 25rpx;
     width: 700rpx;
     height: 90rpx;
     line-height:90rpx;
