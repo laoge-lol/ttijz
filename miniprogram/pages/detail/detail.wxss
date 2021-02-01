@@ -115,7 +115,7 @@ page{
     height: 100rpx;
     margin-top: 20rpx;
     box-shadow: 0 0 5px gray;
-    background-color: pink;
+    background-color: white;
     width: 94%;
 }
 
